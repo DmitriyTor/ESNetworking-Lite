@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class _RequestModel {
+open class _RequestModel {
     
     var urlParameters: [String: Any] {
         return [String: Any]()
