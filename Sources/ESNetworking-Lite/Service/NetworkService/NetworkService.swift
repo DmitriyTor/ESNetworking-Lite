@@ -12,6 +12,10 @@ struct NetworkService {
     
     private var JSONCoder = ESJSONCoder()
     
+    /// Make url request
+    /// - Parameters:
+    ///   - request: request
+    ///   - resultHandler: request result with generic parameter T (model) and error
     func makeUrlRequest<T: Codable>(_ request: URLRequest, resultHandler: @escaping (Result<T, ESRequestError>) -> Void) {
         let urlTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
             

@@ -7,4 +7,7 @@
 
 import Foundation
 
-public typealias ESRequest = _RequestModel & _RequestModelProtocol
+public enum ESRequestType: String {
+    case get = "GET"
+    case post = "POST"
+}
