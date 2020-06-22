@@ -20,4 +20,5 @@ enum ESRequestError: Error {
     case forbidden
     case unspecified(statusCode: Int)
     case dataDecodingError
+    case noData
 }
