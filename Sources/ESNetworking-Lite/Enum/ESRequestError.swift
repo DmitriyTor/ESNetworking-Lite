@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ESRequestError: Error {
+public enum ESRequestError: Error {
     case noConnection
     case lostConnection
     case unauthorized
@@ -21,4 +21,6 @@ enum ESRequestError: Error {
     case unspecified(statusCode: Int)
     case dataDecodingError
     case noData
+    case wrongURL
+    case wrongBodyParams
 }
