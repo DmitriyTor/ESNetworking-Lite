@@ -9,9 +9,9 @@ import Foundation
 
 open class _RequestModel {
     
-    var urlParameters = [String: Any]()
+    open var urlParameters = [String: Any]()
     
-    var bodyParameters = [String: Any]()
+    open var bodyParameters = [String: Any]()
     
-    var headers = [ESHeader.content_type.rawValue: "application/json"]
+    open var headers = [ESHeader.content_type.rawValue: "application/json"]
 }
