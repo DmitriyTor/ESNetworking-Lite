@@ -9,6 +9,8 @@ import Foundation
 
 open class _RequestModel {
     
+    public init() {}
+    
     open var urlParameters: [String: Any] {
         return [String: Any]()
     }
