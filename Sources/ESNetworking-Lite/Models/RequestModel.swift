@@ -9,17 +9,9 @@ import Foundation
 
 open class _RequestModel {
     
-    var urlParameters: [String: Any] {
-        return [String: Any]()
-    }
+    var urlParameters = [String: Any]()
     
-    var bodyParameters: [String: Any] {
-        return [String: Any]()
-    }
+    var bodyParameters = [String: Any]()
     
-    var headers: [String: String] {
-        return [
-            ESHeader.content_type.rawValue: "application/json"
-        ]
-    }
+    var headers = [ESHeader.content_type.rawValue: "application/json"]
 }
