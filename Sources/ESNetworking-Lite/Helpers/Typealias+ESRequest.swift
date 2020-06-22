@@ -1,8 +1,9 @@
 //
-//  File.swift
-//  
+//  Typealies+ESRequest.swift
+//  ESNetworking-Lite
 //
-//  Created by Дмитрий Торопкин on 22.06.2020.
+//  Created by Dmitriy on 22/06/2020.
+//  Copyright © 2020 ESKARIA Corp.. All rights reserved.
 //
 
 import Foundation

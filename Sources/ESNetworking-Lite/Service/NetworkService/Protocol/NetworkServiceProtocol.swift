@@ -9,5 +9,13 @@
 import Foundation
 
 protocol NetworkServiceProtocol {
+    /// Run request func
+    /// - Parameters:
+    ///   - baseUrl: base url for request
+    ///   - requestModel: request model with body, path, params. header, type request
+    ///   - completionQueue: in which queue run completion
+    ///   - cachePolicy: cache policy
+    ///   - timeOut: timeout for request
+    ///   - resultHandler: completion block
     func request<T: Codable>(baseUrl: String, requestModel: ESRequest, completionQueue: DispatchQueue, cachePolicy: URLRequest.CachePolicy, timeOut: TimeInterval, resultHandler: @escaping (Result<T, ESRequestError>) -> Void)
 }
