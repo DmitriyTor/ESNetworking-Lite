@@ -24,3 +24,6 @@ ESNetworking_Lite().request(baseUrl: baseUrl, requestModel: requestModel) { (res
 }
 ```
 Its used Result Generic type and you can use switch result for catch error
+
+## Example use
+You can check our [example app](https://github.com/DmitriyTor/ESNetworking_Lite_Demo)
