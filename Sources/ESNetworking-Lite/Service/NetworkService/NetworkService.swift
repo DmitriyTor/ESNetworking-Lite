@@ -8,57 +8,9 @@
 
 import Foundation
 
-public struct NetworkService {
+struct NetworkService {
     
     private var JSONCoder = ESJSONCoder()
-    
-    public init() {}
-    
-    public func request<T: Codable>(baseUrl: String, requestModel: ESRequest, completionQueue: DispatchQueue = .main, cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy, timeOut: TimeInterval = 15.0, resultHandler: @escaping (Result<T, ESRequestError>) -> Void) {
-        
-        var urlComponents = URLComponents(string: baseUrl + requestModel.path)
-        
-        // add url params to request
-        for (paramName, paramValue) in requestModel.urlParameters {
-            urlComponents?.queryItems?.append(URLQueryItem(name: paramName, value: "\(paramValue)"))
-        }
-       
-        // create URLRequest
-        guard let url = urlComponents?.url else {
-            completionQueue.async {
-                resultHandler(.failure(.wrongURL))
-            }
-            return
-        }
-        var request = URLRequest(url: url, cachePolicy: cachePolicy, timeoutInterval: timeOut)
-        
-        // add header
-        for (paramName, paramValue) in requestModel.headers {
-            request.addValue(paramValue, forHTTPHeaderField: paramName)
-        }
-        
-        // add bodyParams
-        if requestModel.bodyParameters.count > 0 {
-            do {
-                let jsonBody = try JSONSerialization.data(withJSONObject: requestModel.bodyParameters, options: .prettyPrinted)
-                request.httpBody = jsonBody
-            } catch {
-                completionQueue.async {
-                resultHandler(.failure(.wrongBodyParams))
-                }
-            }
-        }
-        
-        // method
-        request.httpMethod = requestModel.method.rawValue
-        
-        //run request
-        makeUrlRequest(request) { (result: Result<T, ESRequestError>) in
-            completionQueue.async {
-                resultHandler(result)
-            }
-        }
-    }
     
     /// Make url request
     /// - Parameters:
@@ -133,4 +85,61 @@ public struct NetworkService {
     private func getStatusCode(response: URLResponse?) -> Int {
         ((response as? HTTPURLResponse)?.statusCode ?? 9999)
     }
+}
+
+extension NetworkService: NetworkServiceProtocol {
+    
+    /// Run request func
+    /// - Parameters:
+    ///   - baseUrl: base url for request
+    ///   - requestModel: request model with body, path, params. header, type request
+    ///   - completionQueue: in which queue run completion
+    ///   - cachePolicy: cache policy
+    ///   - timeOut: timeout for request
+    ///   - resultHandler: completion block
+    func request<T: Codable>(baseUrl: String, requestModel: ESRequest, completionQueue: DispatchQueue, cachePolicy: URLRequest.CachePolicy, timeOut: TimeInterval, resultHandler: @escaping (Result<T, ESRequestError>) -> Void) {
+           
+           var urlComponents = URLComponents(string: baseUrl + requestModel.path)
+           
+           // add url params to request
+           for (paramName, paramValue) in requestModel.urlParameters {
+               urlComponents?.queryItems?.append(URLQueryItem(name: paramName, value: "\(paramValue)"))
+           }
+          
+           // create URLRequest
+           guard let url = urlComponents?.url else {
+               completionQueue.async {
+                   resultHandler(.failure(.wrongURL))
+               }
+               return
+           }
+           var request = URLRequest(url: url, cachePolicy: cachePolicy, timeoutInterval: timeOut)
+           
+           // add header
+           for (paramName, paramValue) in requestModel.headers {
+               request.addValue(paramValue, forHTTPHeaderField: paramName)
+           }
+           
+           // add bodyParams
+           if requestModel.bodyParameters.count > 0 {
+               do {
+                   let jsonBody = try JSONSerialization.data(withJSONObject: requestModel.bodyParameters, options: .prettyPrinted)
+                   request.httpBody = jsonBody
+               } catch {
+                   completionQueue.async {
+                   resultHandler(.failure(.wrongBodyParams))
+                   }
+               }
+           }
+           
+           // method
+           request.httpMethod = requestModel.method.rawValue
+           
+           //run request
+           makeUrlRequest(request) { (result: Result<T, ESRequestError>) in
+               completionQueue.async {
+                   resultHandler(result)
+               }
+           }
+       }
 }

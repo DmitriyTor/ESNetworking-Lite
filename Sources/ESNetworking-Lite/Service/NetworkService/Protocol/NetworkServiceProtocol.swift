@@ -8,4 +8,6 @@
 
 import Foundation
 
-protocol NetworkServiceProtocol { }
+protocol NetworkServiceProtocol {
+    func request<T: Codable>(baseUrl: String, requestModel: ESRequest, completionQueue: DispatchQueue, cachePolicy: URLRequest.CachePolicy, timeOut: TimeInterval, resultHandler: @escaping (Result<T, ESRequestError>) -> Void)
+}
