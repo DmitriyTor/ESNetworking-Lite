@@ -11,7 +11,4 @@ public protocol _RequestModelProtocol {
     
     var path: String { get }
     var method: ESRequestType { get }
-    var urlParameters: [String: Any] { get }
-    var bodyParameters: [String: Any] { get }
-    var headers: [String: String] { get }
 }
