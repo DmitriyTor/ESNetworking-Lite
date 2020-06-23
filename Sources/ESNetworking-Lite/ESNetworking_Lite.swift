@@ -22,6 +22,7 @@ public struct ESNetworking_Lite {
     ///   - cachePolicy: cache policy, default is .useProtocolCachePolicy
     ///   - timeOut: timeout for request. default is 15
     ///   - resultHandler: completion block
+    ///   - progressHandler: Progress handler with Float loading progress from 0 to 1. Default is nill
     public func request<T: Codable>(baseUrl: String, requestModel: ESRequest, completionQueue: DispatchQueue = .main, cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy, timeOut: TimeInterval = 15.0, progressHandler: ((Float) -> Void)? = nil, resultHandler: @escaping (Result<T, ESRequestError>) -> Void) {
         
         self.networkService.request(baseUrl: baseUrl,

@@ -1,0 +1,208 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/dmitriytoropkin/WithoutSync/Eskaria/ESNetworking-Lite/Sources/ESNetworking-Lite/ESNetworking_Lite.swift",
+      "line": 11,
+      "symbol": "ESNetworking_Lite",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dmitriytoropkin/WithoutSync/Eskaria/ESNetworking-Lite/Sources/ESNetworking-Lite/ESNetworking_Lite.swift",
+      "line": 15,
+      "symbol": "ESNetworking_Lite.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dmitriytoropkin/WithoutSync/Eskaria/ESNetworking-Lite/Sources/ESNetworking-Lite/Enum/ESRequestError.swift",
+      "line": 11,
+      "symbol": "ESRequestError",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dmitriytoropkin/WithoutSync/Eskaria/ESNetworking-Lite/Sources/ESNetworking-Lite/Enum/ESRequestError.swift",
+      "line": 12,
+      "symbol": "ESRequestError.noConnection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dmitriytoropkin/WithoutSync/Eskaria/ESNetworking-Lite/Sources/ESNetworking-Lite/Enum/ESRequestError.swift",
+      "line": 13,
+      "symbol": "ESRequestError.lostConnection",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dmitriytoropkin/WithoutSync/Eskaria/ESNetworking-Lite/Sources/ESNetworking-Lite/Enum/ESRequestError.swift",
+      "line": 14,
+      "symbol": "ESRequestError.unauthorized",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dmitriytoropkin/WithoutSync/Eskaria/ESNetworking-Lite/Sources/ESNetworking-Lite/Enum/ESRequestError.swift",
+      "line": 15,
+      "symbol": "ESRequestError.internalServerError",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dmitriytoropkin/WithoutSync/Eskaria/ESNetworking-Lite/Sources/ESNetworking-Lite/Enum/ESRequestError.swift",
+      "line": 16,
+      "symbol": "ESRequestError.badRequest",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dmitriytoropkin/WithoutSync/Eskaria/ESNetworking-Lite/Sources/ESNetworking-Lite/Enum/ESRequestError.swift",
+      "line": 17,
+      "symbol": "ESRequestError.cancelled",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dmitriytoropkin/WithoutSync/Eskaria/ESNetworking-Lite/Sources/ESNetworking-Lite/Enum/ESRequestError.swift",
+      "line": 18,
+      "symbol": "ESRequestError.timedOut",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dmitriytoropkin/WithoutSync/Eskaria/ESNetworking-Lite/Sources/ESNetworking-Lite/Enum/ESRequestError.swift",
+      "line": 19,
+      "symbol": "ESRequestError.notFound",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dmitriytoropkin/WithoutSync/Eskaria/ESNetworking-Lite/Sources/ESNetworking-Lite/Enum/ESRequestError.swift",
+      "line": 20,
+      "symbol": "ESRequestError.forbidden",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dmitriytoropkin/WithoutSync/Eskaria/ESNetworking-Lite/Sources/ESNetworking-Lite/Enum/ESRequestError.swift",
+      "line": 21,
+      "symbol": "ESRequestError.unspecified(statusCode:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dmitriytoropkin/WithoutSync/Eskaria/ESNetworking-Lite/Sources/ESNetworking-Lite/Enum/ESRequestError.swift",
+      "line": 22,
+      "symbol": "ESRequestError.dataDecodingError",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dmitriytoropkin/WithoutSync/Eskaria/ESNetworking-Lite/Sources/ESNetworking-Lite/Enum/ESRequestError.swift",
+      "line": 23,
+      "symbol": "ESRequestError.noData",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dmitriytoropkin/WithoutSync/Eskaria/ESNetworking-Lite/Sources/ESNetworking-Lite/Enum/ESRequestError.swift",
+      "line": 24,
+      "symbol": "ESRequestError.wrongURL",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dmitriytoropkin/WithoutSync/Eskaria/ESNetworking-Lite/Sources/ESNetworking-Lite/Enum/ESRequestError.swift",
+      "line": 25,
+      "symbol": "ESRequestError.wrongBodyParams",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dmitriytoropkin/WithoutSync/Eskaria/ESNetworking-Lite/Sources/ESNetworking-Lite/Enum/ESRequestType.swift",
+      "line": 11,
+      "symbol": "ESRequestType",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dmitriytoropkin/WithoutSync/Eskaria/ESNetworking-Lite/Sources/ESNetworking-Lite/Enum/ESRequestType.swift",
+      "line": 12,
+      "symbol": "ESRequestType.get",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dmitriytoropkin/WithoutSync/Eskaria/ESNetworking-Lite/Sources/ESNetworking-Lite/Enum/ESRequestType.swift",
+      "line": 13,
+      "symbol": "ESRequestType.post",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dmitriytoropkin/WithoutSync/Eskaria/ESNetworking-Lite/Sources/ESNetworking-Lite/Helpers/Typealias+ESRequest.swift",
+      "line": 11,
+      "symbol": "ESRequest",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dmitriytoropkin/WithoutSync/Eskaria/ESNetworking-Lite/Sources/ESNetworking-Lite/Models/Protocol/RequestModelProtocol.swift",
+      "line": 11,
+      "symbol": "_RequestModelProtocol",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dmitriytoropkin/WithoutSync/Eskaria/ESNetworking-Lite/Sources/ESNetworking-Lite/Models/Protocol/RequestModelProtocol.swift",
+      "line": 13,
+      "symbol": "_RequestModelProtocol.path",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dmitriytoropkin/WithoutSync/Eskaria/ESNetworking-Lite/Sources/ESNetworking-Lite/Models/Protocol/RequestModelProtocol.swift",
+      "line": 14,
+      "symbol": "_RequestModelProtocol.method",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dmitriytoropkin/WithoutSync/Eskaria/ESNetworking-Lite/Sources/ESNetworking-Lite/Models/RequestModel.swift",
+      "line": 11,
+      "symbol": "_RequestModel",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dmitriytoropkin/WithoutSync/Eskaria/ESNetworking-Lite/Sources/ESNetworking-Lite/Models/RequestModel.swift",
+      "line": 13,
+      "symbol": "_RequestModel.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dmitriytoropkin/WithoutSync/Eskaria/ESNetworking-Lite/Sources/ESNetworking-Lite/Models/RequestModel.swift",
+      "line": 15,
+      "symbol": "_RequestModel.urlParameters",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dmitriytoropkin/WithoutSync/Eskaria/ESNetworking-Lite/Sources/ESNetworking-Lite/Models/RequestModel.swift",
+      "line": 19,
+      "symbol": "_RequestModel.bodyParameters",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dmitriytoropkin/WithoutSync/Eskaria/ESNetworking-Lite/Sources/ESNetworking-Lite/Models/RequestModel.swift",
+      "line": 23,
+      "symbol": "_RequestModel.headers",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/dmitriytoropkin/WithoutSync/Eskaria/ESNetworking-Lite"
+}

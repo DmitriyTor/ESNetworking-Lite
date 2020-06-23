@@ -17,5 +17,6 @@ protocol NetworkServiceProtocol {
     ///   - cachePolicy: cache policy
     ///   - timeOut: timeout for request
     ///   - resultHandler: completion block
+    ///   - progressHandler: Progress handler with Float loading progress from 0 to 1
     func request<T: Codable>(baseUrl: String, requestModel: ESRequest, completionQueue: DispatchQueue, cachePolicy: URLRequest.CachePolicy, timeOut: TimeInterval, progressHandler: ((Float) -> Void)?, resultHandler: @escaping (Result<T, ESRequestError>) -> Void)
 }

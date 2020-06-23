@@ -118,9 +118,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:17ESNetworking_LiteAAV7request7baseUrl0C5Model15completionQueue11cachePolicy7timeOut13resultHandlerySS_AA08_RequestF8Protocol_AA01_oF0CXcSo17OS_dispatch_queueCSo017NSURLRequestCacheJ0VSdys6ResultOyxAA14ESRequestErrorOGctSeRzSERzlF"></a>
-                    <a name="//apple_ref/swift/Method/request(baseUrl:requestModel:completionQueue:cachePolicy:timeOut:resultHandler:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:17ESNetworking_LiteAAV7request7baseUrl0C5Model15completionQueue11cachePolicy7timeOut13resultHandlerySS_AA08_RequestF8Protocol_AA01_oF0CXcSo17OS_dispatch_queueCSo017NSURLRequestCacheJ0VSdys6ResultOyxAA14ESRequestErrorOGctSeRzSERzlF">request(baseUrl:<wbr>requestModel:<wbr>completionQueue:<wbr>cachePolicy:<wbr>timeOut:<wbr>resultHandler:<wbr>)</a>
+                    <a name="/s:17ESNetworking_LiteAAV7request7baseUrl0C5Model15completionQueue11cachePolicy7timeOut15progressHandler06resultN0ySS_AA08_RequestF8Protocol_AA01_pF0CXcSo17OS_dispatch_queueCSo017NSURLRequestCacheJ0VSdySfcSgys6ResultOyxAA14ESRequestErrorOGctSeRzSERzlF"></a>
+                    <a name="//apple_ref/swift/Method/request(baseUrl:requestModel:completionQueue:cachePolicy:timeOut:progressHandler:resultHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17ESNetworking_LiteAAV7request7baseUrl0C5Model15completionQueue11cachePolicy7timeOut15progressHandler06resultN0ySS_AA08_RequestF8Protocol_AA01_pF0CXcSo17OS_dispatch_queueCSo017NSURLRequestCacheJ0VSdySfcSgys6ResultOyxAA14ESRequestErrorOGctSeRzSERzlF">request(baseUrl:<wbr>requestModel:<wbr>completionQueue:<wbr>cachePolicy:<wbr>timeOut:<wbr>progressHandler:<wbr>resultHandler:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -135,7 +135,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">request</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">baseUrl</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">requestModel</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:17ESNetworking_Lite9ESRequesta">ESRequest</a></span><span class="p">,</span> <span class="nv">completionQueue</span><span class="p">:</span> <span class="kt">DispatchQueue</span> <span class="o">=</span> <span class="o">.</span><span class="n">main</span><span class="p">,</span> <span class="nv">cachePolicy</span><span class="p">:</span> <span class="kt">URLRequest</span><span class="o">.</span><span class="kt">CachePolicy</span> <span class="o">=</span> <span class="o">.</span><span class="n">useProtocolCachePolicy</span><span class="p">,</span> <span class="nv">timeOut</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="mf">15.0</span><span class="p">,</span> <span class="nv">resultHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Result</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">,</span> <span class="kt"><a href="../Enums/ESRequestError.html">ESRequestError</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">Decodable</span><span class="p">,</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">Encodable</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">request</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">baseUrl</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">requestModel</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:17ESNetworking_Lite9ESRequesta">ESRequest</a></span><span class="p">,</span> <span class="nv">completionQueue</span><span class="p">:</span> <span class="kt">DispatchQueue</span> <span class="o">=</span> <span class="o">.</span><span class="n">main</span><span class="p">,</span> <span class="nv">cachePolicy</span><span class="p">:</span> <span class="kt">URLRequest</span><span class="o">.</span><span class="kt">CachePolicy</span> <span class="o">=</span> <span class="o">.</span><span class="n">useProtocolCachePolicy</span><span class="p">,</span> <span class="nv">timeOut</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="mf">15.0</span><span class="p">,</span> <span class="nv">progressHandler</span><span class="p">:</span> <span class="p">((</span><span class="kt">Float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">resultHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Result</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">,</span> <span class="kt"><a href="../Enums/ESRequestError.html">ESRequestError</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">Decodable</span><span class="p">,</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">Encodable</span></code></pre>
 
                         </div>
                       </div>
@@ -215,6 +215,18 @@
                                 </div>
                               </td>
                             </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>progressHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Progress handler with Float loading progress from 0 to 1. Default is nill</p>
+                                </div>
+                              </td>
+                            </tr>
                           </tbody>
                         </table>
                       </div>
@@ -226,7 +238,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2020-06-22)</p>
+          <p>&copy; 2020 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2020-06-23)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
