@@ -22,13 +22,14 @@ public struct ESNetworking_Lite {
     ///   - cachePolicy: cache policy, default is .useProtocolCachePolicy
     ///   - timeOut: timeout for request. default is 15
     ///   - resultHandler: completion block
-    public func request<T: Codable>(baseUrl: String, requestModel: ESRequest, completionQueue: DispatchQueue = .main, cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy, timeOut: TimeInterval = 15.0, resultHandler: @escaping (Result<T, ESRequestError>) -> Void) {
+    public func request<T: Codable>(baseUrl: String, requestModel: ESRequest, completionQueue: DispatchQueue = .main, cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy, timeOut: TimeInterval = 15.0, progressHandler: ((Float) -> Void)? = nil, resultHandler: @escaping (Result<T, ESRequestError>) -> Void) {
         
         self.networkService.request(baseUrl: baseUrl,
                                     requestModel: requestModel,
                                     completionQueue: completionQueue,
                                     cachePolicy: cachePolicy,
                                     timeOut: timeOut,
+                                    progressHandler: progressHandler,
                                     resultHandler: resultHandler)
     }
 }

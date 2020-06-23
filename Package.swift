@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "ESNetworking-Lite",
+    platforms: [.iOS(.v11), .macOS(.v10_13)],
     products: [
         .library(
             name: "ESNetworking-Lite",
