@@ -23,6 +23,20 @@ ESNetworking_Lite().request(baseUrl: baseUrl, requestModel: requestModel) { (res
     }
 }
 ```
+
+You can use progress handler like this 
+```swift
+ESNetworking_Lite().request(baseUrl: baseUrl, requestModel: requestModel, progressHandler: { (progress) in
+    print(progress)
+}) { (result: Result<PostModel, ESRequestError>) in
+    switch result {
+    case .success(let model):
+        print(model)
+    case .failure(let error):
+        print(error)
+    }
+}
+```
 Its used Result Generic type and you can use switch result for catch error
 
 ## Example use
