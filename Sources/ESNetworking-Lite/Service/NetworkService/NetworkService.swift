@@ -51,7 +51,7 @@ final class NetworkService {
             resultHandler(.success(decodedData))
         }
         progressObservation = urlTask.progress.observe(\.fractionCompleted) { progress, _ in
-            let progress = Float(progress.fractionCompleted)
+            let progress = Float(progress.fractionCompleted).rounded(toPlaces: 2)
             progressHandler?(progress)
         }
         
