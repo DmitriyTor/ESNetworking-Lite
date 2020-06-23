@@ -28,7 +28,7 @@ You can use progress handler like this
 ```swift
 ESNetworking_Lite().request(baseUrl: baseUrl, requestModel: requestModel, progressHandler: { (progress) in
     print(progress)
-}) { (result: Result<PostModel, ESRequestError>) in
+}) { (result: Result<*YOUR MODEL*, ESRequestError>) in
     switch result {
     case .success(let model):
         print(model)
