@@ -8,22 +8,11 @@
 
 import Foundation
 
-final class NetworkService {
+struct NetworkService {
     
-    private let JSONCoder: ESJSONCoderProtocol
-    private var progressObservation: NSKeyValueObservation?
-    private var progressHandler: ((Float) -> Void)?
-    private var progress: Float
-    
-    init() {
-        self.JSONCoder = ESJSONCoder()
-        self.progress = 0
-    }
-    
-    deinit {
-        progressObservation?.invalidate()
-    }
-    
+    private let JSONCoder: ESJSONCoderProtocol = ESJSONCoder()
+    private var requestStateObserver: NetworkRequestStateObserverProtocol = NetworkRequestStateObserver()
+
     /// Make url request
     /// - Parameters:
     ///   - request: request
@@ -56,13 +45,7 @@ final class NetworkService {
             
             resultHandler(.success(decodedData))
         }
-        progressObservation = urlTask.progress.observe(\.fractionCompleted) { progressValue, _ in
-            let currentProgress = Float(progressValue.fractionCompleted).rounded(toPlaces: 2)
-            if !(self.progress == currentProgress) && !(self.progress > currentProgress) {
-                self.progress = currentProgress
-                progressHandler?(self.progress)
-            }
-        }
+        requestStateObserver.setObserverFor(task: urlTask, progressHandler: progressHandler)
         
         urlTask.resume()
     }
@@ -119,8 +102,6 @@ extension NetworkService: NetworkServiceProtocol {
     ///   - progressHandler: Progress handler with Float loading progress from 0 to 1
     func request<T: Codable>(baseUrl: String, requestModel: ESRequest, completionQueue: DispatchQueue, cachePolicy: URLRequest.CachePolicy, timeOut: TimeInterval, progressHandler: ((Float) -> Void)?, resultHandler: @escaping (Result<T, ESRequestError>) -> Void) {
         
-        self.progress = 0
-        
         var urlComponents = URLComponents(string: baseUrl + requestModel.path)
         
         // add url params to request
@@ -161,7 +142,6 @@ extension NetworkService: NetworkServiceProtocol {
         makeUrlRequest(request, progressHandler: progressHandler) { (result: Result<T, ESRequestError>) in
             completionQueue.async {
                 resultHandler(result)
-                self.progressObservation?.invalidate()
             }
         }
     }
