@@ -10,9 +10,15 @@ import Foundation
 
 final class NetworkService {
     
-    private var JSONCoder = ESJSONCoder()
+    private let JSONCoder: ESJSONCoderProtocol
     private var progressObservation: NSKeyValueObservation?
     private var progressHandler: ((Float) -> Void)?
+    private var progress: Float
+    
+    init() {
+        self.JSONCoder = ESJSONCoder()
+        self.progress = 0
+    }
     
     deinit {
         progressObservation?.invalidate()
@@ -50,9 +56,12 @@ final class NetworkService {
             
             resultHandler(.success(decodedData))
         }
-        progressObservation = urlTask.progress.observe(\.fractionCompleted) { progress, _ in
-            let progress = Float(progress.fractionCompleted).rounded(toPlaces: 2)
-            progressHandler?(progress)
+        progressObservation = urlTask.progress.observe(\.fractionCompleted) { progressValue, _ in
+            let currentProgress = Float(progressValue.fractionCompleted).rounded(toPlaces: 2)
+            if !(self.progress == currentProgress) && !(self.progress > currentProgress) {
+                self.progress = currentProgress
+                progressHandler?(self.progress)
+            }
         }
         
         urlTask.resume()
@@ -108,6 +117,8 @@ extension NetworkService: NetworkServiceProtocol {
     ///   - timeOut: timeout for request
     ///   - resultHandler: completion block
     func request<T: Codable>(baseUrl: String, requestModel: ESRequest, completionQueue: DispatchQueue, cachePolicy: URLRequest.CachePolicy, timeOut: TimeInterval, progressHandler: ((Float) -> Void)?, resultHandler: @escaping (Result<T, ESRequestError>) -> Void) {
+        
+        self.progress = 0
         
         var urlComponents = URLComponents(string: baseUrl + requestModel.path)
         
