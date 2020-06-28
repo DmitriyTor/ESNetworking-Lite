@@ -23,7 +23,6 @@ open class _RequestModel {
     open var headers: [String: String] {
         return [
             ESHeader.content_type.rawValue: "application/json",
-            ESHeader.accept_encoding.rawValue: ""
         ]
     }
 }

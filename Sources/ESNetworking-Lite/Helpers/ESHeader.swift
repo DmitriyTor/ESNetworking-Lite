@@ -10,5 +10,4 @@ import Foundation
 
 enum ESHeader: String {
     case content_type = "Content-Type"
-    case accept_encoding = "Accept-Encoding"
 }

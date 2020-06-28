@@ -128,6 +128,7 @@ extension NetworkService: NetworkServiceProtocol {
             do {
                 let jsonBody = try JSONSerialization.data(withJSONObject: requestModel.bodyParameters, options: .prettyPrinted)
                 request.httpBody = jsonBody
+                request.setValue("\(jsonBody.count)", forHTTPHeaderField: "Content-Length")
             } catch {
                 completionQueue.async {
                     resultHandler(.failure(.wrongBodyParams))
@@ -137,7 +138,7 @@ extension NetworkService: NetworkServiceProtocol {
         
         // method
         request.httpMethod = requestModel.method.rawValue
-        
+
         //run request
         makeUrlRequest(request, progressHandler: progressHandler) { (result: Result<T, ESRequestError>) in
             completionQueue.async {
