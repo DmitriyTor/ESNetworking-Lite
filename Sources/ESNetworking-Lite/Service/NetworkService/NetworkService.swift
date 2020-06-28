@@ -20,7 +20,7 @@ struct NetworkService {
     private func makeUrlRequest<T: Codable>(_ request: URLRequest, progressHandler: ((Float) -> Void)?, resultHandler: @escaping (Result<T, ESRequestError>) -> Void) {
         let urlTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
             
-            let statusCode = self.getStatusCode(response: response)
+            let statusCode = self.getStatusCode(from: response)
             let errorType = self.getErrorType(from: statusCode)
             
             // check error and status code in 200 range
@@ -84,7 +84,7 @@ struct NetworkService {
     /// Get status code from URLREsponse
     /// - Parameter response: response
     /// - Returns: return status code in Int format
-    private func getStatusCode(response: URLResponse?) -> Int {
+    private func getStatusCode(from response: URLResponse?) -> Int {
         ((response as? HTTPURLResponse)?.statusCode ?? 9999)
     }
 }
@@ -128,6 +128,7 @@ extension NetworkService: NetworkServiceProtocol {
             do {
                 let jsonBody = try JSONSerialization.data(withJSONObject: requestModel.bodyParameters, options: .prettyPrinted)
                 request.httpBody = jsonBody
+                request.setValue("\(jsonBody.count)", forHTTPHeaderField: "Content-Length")
             } catch {
                 completionQueue.async {
                     resultHandler(.failure(.wrongBodyParams))
@@ -137,7 +138,7 @@ extension NetworkService: NetworkServiceProtocol {
         
         // method
         request.httpMethod = requestModel.method.rawValue
-        
+
         //run request
         makeUrlRequest(request, progressHandler: progressHandler) { (result: Result<T, ESRequestError>) in
             completionQueue.async {
